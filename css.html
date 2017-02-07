@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0px;
+		padding: 0px;
+	}
+	@keyframes animate1{
+		0% {
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: orange;
+		}
+		25%{
+			position: absolute;
+			left: 100px;
+			top: 0;
+			background:red;
+		}
+		50%{
+			position: absolute;
+			left: 100px;top: 100px;
+			background: blue;
+		}
+		75%{
+			position: absolute;
+			left: 0;top: 100px;
+			background: yellow;
+		}
+		100%{
+			position: absolute;
+			left: 0;top: 0;
+			background: green;
+		}
+	}
+		@keyframes animate{
+		0% {
+			background: url(images/1.jpg);
+			background-size: 200px 200px;
+		}
+		25%{
+			background: url(images/2.jpg);
+			background-size: 200px 200px;
+		}
+		50%{
+			background: url(images/3.jpg);
+			background-size: 200px 200px;
+		}
+		75%{
+			background: url(images/4.jpg);
+			background-size: 200px 200px;
+		}
+		100%{
+			background: url(images/5.jpg);
+			background-size: 200px 200px;
+		}
+	}
+/* 	.div1{
+	width: 200px;
+	height: 200px;
+	background: url(images/1.jpg);
+	animation: animate 4s ease-in 2s infinite alternate;
+	background-size: 200px 200px;
+	
+} */
+	.div2{
+		width: 200px;
+		height: 200px;
+		background: pink;
+		-webkit-animation: animate1 4s ease 1s  2 backwards;
+	}
+
+	/*
+		animate 参数
+		第一个参数：@keyframes 函数的名字
+		第二个参数：动画执行的事件
+		第三个参数：动画执行的速度
+		第四个参数：动画延迟的事件
+		第五个参数：动画执行次数 number 无限播放 infinite
+		第六个参数：动画播放的方向 默认是 normal  alternate 反向播放
+		第七个参数：动画是否执行 默认是正在执行running paused是暂停
+		第八个参数:规定动画在播放之前或之后，其他效果是否可见 forwards停留在动画执行完(100%) 
+		backwards与animate-delay一起使用在延时的这段时间内动画显示0%的效果 
+		both forwards backwards 的效果同时兼备
+	 */
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<button class="btn">暂停</button>
+	<button class="btn1">开始</button>
+	<script>
+			var btn=document.getElementsByClassName("btn")[0]
+				var btn1=document.getElementsByClassName("btn1")[0]
+			var box=document.getElementsByClassName("div2")[0]
+			btn.onclick=function(){
+				box.style.webkitAnimationPlayState="paused"
+			}
+			btn1.onclick=function(){
+				box.style.webkitAnimationPlayState="running"
+			}
+	</script>
+</body>
+</html>
